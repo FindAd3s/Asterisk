@@ -12,6 +12,8 @@ class AREmotionView: UIViewController, ARSCNViewDelegate {
 
     @IBOutlet weak var sceneView: ARSCNView!
     
+    var preferences: Preferences?
+    
     var emotion = "No Emotion Presented"
     //The sceneview that we are going to display.
 //    private let sceneView = ARSCNView(frame: UIScreen.main.bounds)
@@ -48,6 +50,11 @@ class AREmotionView: UIViewController, ARSCNViewDelegate {
     }
     @IBAction func captureButtonPressed(_ sender: UIButton) {
         print(emotion)
+        
+        let destinationVC = MainMenuView()
+        destinationVC.emotion = emotion
+        
+        preferences?.emotionInput(emotion: emotion)
         self.dismiss(animated: true, completion: nil)
     }
     
