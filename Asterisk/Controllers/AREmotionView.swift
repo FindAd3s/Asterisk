@@ -54,8 +54,9 @@ class AREmotionView: UIViewController, ARSCNViewDelegate {
         let destinationVC = MainMenuView()
         destinationVC.emotion = emotion
         
-        preferences?.emotionInput(emotion: emotion)
-        self.dismiss(animated: true, completion: nil)
+        performSegue(withIdentifier: "goToData", sender: self)
+        
+//        self.dismiss(animated: true, completion: nil)
     }
     
 
@@ -100,6 +101,12 @@ class AREmotionView: UIViewController, ARSCNViewDelegate {
                     }
                 }
             }])
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender:Any?){
+        if segue.identifier == "goToData"{
+            let destinationVC = segue.destination as! DataView
+            destinationVC.emotion = emotion
+        }
     }
 }
 

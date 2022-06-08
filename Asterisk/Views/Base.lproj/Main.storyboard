@@ -61,6 +61,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.14117647059999999" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" id="RHb-LF-Oeg"/>
                     <connections>
                         <outlet property="emotionOfUser" destination="57p-cK-vgK" id="FhL-7K-X1K"/>
                         <segue destination="MVZ-bM-7Uf" kind="presentation" identifier="goToEmotionRec" modalPresentationStyle="overCurrentContext" id="4VH-P2-sOL"/>
@@ -103,11 +104,39 @@
                     <navigationItem key="navigationItem" id="DzI-5M-bxG"/>
                     <connections>
                         <outlet property="sceneView" destination="1mq-je-8q6" id="t0s-I9-0Ac"/>
+                        <segue destination="swa-yU-cag" kind="presentation" identifier="goToData" id="88B-2d-g5O"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fr7-SB-nFj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="829" y="84"/>
+        </scene>
+        <!--Data View-->
+        <scene sceneID="gj2-2u-6eA">
+            <objects>
+                <viewController id="swa-yU-cag" userLabel="Data View" customClass="DataView" customModule="Asterisk" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xlM-sJ-fJM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="17Z-7S-Umz">
+                                <rect key="frame" x="70" y="231" width="275" height="114"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="IED-MY-dl0"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <outlet property="emotionLabel" destination="17Z-7S-Umz" id="UyX-xt-Zeh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9J1-kU-ZXu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1650.7246376811595" y="92.410714285714278"/>
         </scene>
         <!--Preferences View-->
         <scene sceneID="scV-nd-8Zd">

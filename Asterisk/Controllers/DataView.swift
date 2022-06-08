@@ -1,21 +1,23 @@
 //
-//  PreferencesViewController.swift
+//  DataView.swift
 //  Asterisk
 //
-//  Created by Adrian Richton Co on 6/2/22.
+//  Created by Adrian Richton Co on 6/8/22.
 //
 
 import UIKit
 
-class PreferencesView: UIViewController {
+class DataView: UIViewController {
     
+    var emotion: String?
     
-    
+    @IBOutlet weak var emotionLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        emotionLabel.text = "Emotion of user: \(emotion ?? "No data")"
         // Do any additional setup after loading the view.
     }
+    
     
 
     /*

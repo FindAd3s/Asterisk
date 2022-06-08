@@ -26,7 +26,7 @@ class MainMenuView: UIViewController {
         print("Start Button Pressed")
         
         self.performSegue(withIdentifier: "goToEmotionRec", sender: self)
-        self.performSegue(withIdentifier: "goToEmotionRec", sender: self)
+        
         updateUI()
 
     }
