@@ -17,7 +17,12 @@ class PreferencesView: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func mainMenuButton(_ sender: UIButton) {
+        
+        performSegue(withIdentifier: "goToMainMenu", sender: self)
+        
+    }
+    
     /*
     // MARK: - Navigation
 

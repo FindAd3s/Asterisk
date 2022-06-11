@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3F8035AE2850986000D48ACD /* DataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8035AD2850986000D48ACD /* DataView.swift */; };
-		3F882C182848944900F71985 /* CNNEmotions.mlarchive in Resources */ = {isa = PBXBuildFile; fileRef = 3F882C162848944900F71985 /* CNNEmotions.mlarchive */; };
-		3F882C192848944900F71985 /* CNNEmotions.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 3F882C172848944900F71985 /* CNNEmotions.mlmodel */; };
 		3FA01AD928192CB700365F14 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA01AD828192CB700365F14 /* AppDelegate.swift */; };
 		3FA01ADB28192CB700365F14 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA01ADA28192CB700365F14 /* SceneDelegate.swift */; };
 		3FA01AE028192CB700365F14 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FA01ADE28192CB700365F14 /* Main.storyboard */; };
@@ -20,12 +18,11 @@
 		3FCD43412848E41200504722 /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCD43402848E41200504722 /* MainMenuView.swift */; };
 		3FCD43432848E4A400504722 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCD43422848E4A400504722 /* Preferences.swift */; };
 		3FCD43452848E4F800504722 /* AppUserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCD43442848E4F800504722 /* AppUserData.swift */; };
+		3FFF26A82853817B0057FC96 /* CNNEmotions.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = 3FFF26A72853817B0057FC96 /* CNNEmotions.mlpackage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3F8035AD2850986000D48ACD /* DataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataView.swift; sourceTree = "<group>"; };
-		3F882C162848944900F71985 /* CNNEmotions.mlarchive */ = {isa = PBXFileReference; lastKnownFileType = file; name = CNNEmotions.mlarchive; path = "../../../CoreML/ARKit-CoreML-Emotion-Classification/ARKit-CoreML-Emotion-Classification/ARKit-CoreML-Emotion-Classification/CNNEmotions.mlarchive"; sourceTree = "<group>"; };
-		3F882C172848944900F71985 /* CNNEmotions.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = CNNEmotions.mlmodel; path = "../../../CoreML/ARKit-CoreML-Emotion-Classification/ARKit-CoreML-Emotion-Classification/ARKit-CoreML-Emotion-Classification/CNNEmotions.mlmodel"; sourceTree = "<group>"; };
 		3FA01AD528192CB700365F14 /* Asterisk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Asterisk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FA01AD828192CB700365F14 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FA01ADA28192CB700365F14 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -38,6 +35,7 @@
 		3FCD43402848E41200504722 /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
 		3FCD43422848E4A400504722 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		3FCD43442848E4F800504722 /* AppUserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUserData.swift; sourceTree = "<group>"; };
+		3FFF26A72853817B0057FC96 /* CNNEmotions.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; name = CNNEmotions.mlpackage; path = "../../../CoreML/ARKit-CoreML-Emotion-Classification/ARKit-CoreML-Emotion-Classification/ARKit-CoreML-Emotion-Classification/CNNEmotions.mlpackage"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,8 +104,7 @@
 				3FA01AE128192CB900365F14 /* Assets.xcassets */,
 				3FA01AE328192CB900365F14 /* LaunchScreen.storyboard */,
 				3FA01AE628192CB900365F14 /* Info.plist */,
-				3F882C162848944900F71985 /* CNNEmotions.mlarchive */,
-				3F882C172848944900F71985 /* CNNEmotions.mlmodel */,
+				3FFF26A72853817B0057FC96 /* CNNEmotions.mlpackage */,
 			);
 			path = Asterisk;
 			sourceTree = "<group>";
@@ -173,7 +170,6 @@
 				3FA01AE528192CB900365F14 /* LaunchScreen.storyboard in Resources */,
 				3FA01AE228192CB900365F14 /* Assets.xcassets in Resources */,
 				3FA01AE028192CB700365F14 /* Main.storyboard in Resources */,
-				3F882C182848944900F71985 /* CNNEmotions.mlarchive in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,9 +184,9 @@
 				3FCD433F2848E30100504722 /* AREmotionView.swift in Sources */,
 				3FCD43432848E4A400504722 /* Preferences.swift in Sources */,
 				3FCD43412848E41200504722 /* MainMenuView.swift in Sources */,
-				3F882C192848944900F71985 /* CNNEmotions.mlmodel in Sources */,
 				3FA01AD928192CB700365F14 /* AppDelegate.swift in Sources */,
 				3FA01ADB28192CB700365F14 /* SceneDelegate.swift in Sources */,
+				3FFF26A82853817B0057FC96 /* CNNEmotions.mlpackage in Sources */,
 				3FCD43452848E4F800504722 /* AppUserData.swift in Sources */,
 				3FCD433D2848E23900504722 /* PreferencesView.swift in Sources */,
 			);

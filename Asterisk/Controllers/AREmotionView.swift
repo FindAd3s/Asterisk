@@ -94,7 +94,7 @@ class AREmotionView: UIViewController, ARSCNViewDelegate {
             DispatchQueue.main.async { [self] in
 //                print("identifier: \(topResult.identifier), confidence: \(topResult.confidence)")
                     //Check if the confidence is high enough - used an arbitrary value here - and update the text to display the resulted emotion.
-                    if firstResult.confidence > 0.75 {
+                    if firstResult.confidence > 0.95 {
                         (self?.textNode?.geometry as? SCNText)?.string = firstResult.identifier
                         self!.emotion = firstResult.identifier
 //                        print(self!.emotion)

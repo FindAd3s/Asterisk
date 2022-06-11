@@ -33,16 +33,17 @@ class MainMenuView: UIViewController {
     
     @IBAction func preferencesButton(_ sender: UIButton) {
         print("Preferences Button Pressed")
-        print(emotion ?? "No data")
+        
+        self.performSegue(withIdentifier: "goToPreferences", sender: self)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender:Any?){
-        if segue.identifier == "goToEmotionRec"{
-            let destinationVC = segue.destination as! AREmotionView
-        }
-        updateUI()
-
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender:Any?){
+//        if segue.identifier == "goToEmotionRec"{
+//            let destinationVC = segue.destination as! AREmotionView
+//        }
+//        updateUI()
+//
+//    }
     
     func updateUI(){
         let emotionUser = preferences?.userEmotion() ?? "[Data Unavailable]"

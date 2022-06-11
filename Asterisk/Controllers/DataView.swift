@@ -18,6 +18,9 @@ class DataView: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func mainMenuButton(_ sender: Any) {
+        performSegue(withIdentifier: "goToMainMenu1", sender: self)
+    }
     
 
     /*
