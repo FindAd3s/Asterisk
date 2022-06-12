@@ -50,11 +50,11 @@
                                     <action selector="preferencesButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KPD-Gz-uZA"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Debug Area: \nUser registered being \(emotionUser)" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="57p-cK-vgK">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="57p-cK-vgK">
                                 <rect key="frame" x="34" y="716" width="347" height="146"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -63,7 +63,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="RHb-LF-Oeg"/>
                     <connections>
-                        <outlet property="emotionOfUser" destination="57p-cK-vgK" id="FhL-7K-X1K"/>
+                        <outlet property="emotionOfUser" destination="57p-cK-vgK" id="lXy-32-AjX"/>
                         <segue destination="MVZ-bM-7Uf" kind="presentation" identifier="goToEmotionRec" modalPresentationStyle="overFullScreen" id="4VH-P2-sOL"/>
                         <segue destination="4xi-Wf-z9A" kind="presentation" identifier="goToPreferences" modalPresentationStyle="overCurrentContext" id="s1d-Li-KGE"/>
                     </connections>

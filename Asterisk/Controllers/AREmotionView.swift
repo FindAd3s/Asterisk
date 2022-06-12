@@ -12,6 +12,8 @@ class AREmotionView: UIViewController, ARSCNViewDelegate {
 
     @IBOutlet weak var sceneView: ARSCNView!
     
+    var defaults = UserDefaults.standard
+    
     var preferences: Preferences?
     
     var emotion = "No Emotion Presented"
@@ -50,9 +52,8 @@ class AREmotionView: UIViewController, ARSCNViewDelegate {
     }
     @IBAction func captureButtonPressed(_ sender: UIButton) {
         print(emotion)
-        
-        let destinationVC = MainMenuView()
-        destinationVC.emotion = emotion
+                
+        self.defaults.set(emotion, forKey: "UserEmotion") // Publish to UserDefaults
         
         performSegue(withIdentifier: "goToData", sender: self)
         
@@ -94,7 +95,7 @@ class AREmotionView: UIViewController, ARSCNViewDelegate {
             DispatchQueue.main.async { [self] in
 //                print("identifier: \(topResult.identifier), confidence: \(topResult.confidence)")
                     //Check if the confidence is high enough - used an arbitrary value here - and update the text to display the resulted emotion.
-                    if firstResult.confidence > 0.95 {
+                    if firstResult.confidence > 0.60 {
                         (self?.textNode?.geometry as? SCNText)?.string = firstResult.identifier
                         self!.emotion = firstResult.identifier
 //                        print(self!.emotion)
