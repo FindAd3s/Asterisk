@@ -1,37 +1,24 @@
 //
-//  PreferencesViewController.swift
+//  SpotifyPreferences2View.swift
 //  Asterisk
 //
-//  Created by Adrian Richton Co on 6/2/22.
+//  Created by Adrian Richton Co on 6/14/22.
 //
 
 import UIKit
 
-class PreferencesView: UIViewController {
-    
-    
-    
+class SpotifyPreferences2View: UIViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func spotPref1Button(_ sender: UIButton) {
+    @IBAction func returnToPreferencesButton(_ sender: UIButton) {
         
-        performSegue(withIdentifier: "goToSpotPref1", sender: self)
+        performSegue(withIdentifier: "goToPreferences2", sender: self)
         
-    }
-    
-    @IBAction func spotPref2Button(_ sender: UIButton) {
-        
-        performSegue(withIdentifier: "goToSpotPref2", sender: self)
-        
-    }
-    
-    @IBAction func mainMenuButton(_ sender: UIButton) {
-        
-        performSegue(withIdentifier: "goToMainMenu", sender: self)
         
     }
     

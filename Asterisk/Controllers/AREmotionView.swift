@@ -10,11 +10,12 @@ import ARKit
 
 class AREmotionView: UIViewController, ARSCNViewDelegate {
 
+    @IBOutlet weak var userEmotionText: UILabel!
     @IBOutlet weak var sceneView: ARSCNView!
     
     var defaults = UserDefaults.standard
     
-    var preferences: Preferences?
+    
     
     var emotion = "No Emotion Presented"
     //The sceneview that we are going to display.
@@ -96,7 +97,9 @@ class AREmotionView: UIViewController, ARSCNViewDelegate {
 //                print("identifier: \(topResult.identifier), confidence: \(topResult.confidence)")
                     //Check if the confidence is high enough - used an arbitrary value here - and update the text to display the resulted emotion.
                     if firstResult.confidence > 0.60 {
-                        (self?.textNode?.geometry as? SCNText)?.string = firstResult.identifier
+//                        (self?.textNode?.geometry as? SCNText)?.string = firstResult.identifier
+                        self?.userEmotionText.text = firstResult.identifier
+//                        Insert necessary change for text here. Delete SCNText after for a static implementation of emotion readout
                         self!.emotion = firstResult.identifier
 //                        print(self!.emotion)
                     }

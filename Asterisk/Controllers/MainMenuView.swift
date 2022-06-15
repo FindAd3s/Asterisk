@@ -14,7 +14,6 @@ class MainMenuView: UIViewController {
     
     var defaults = UserDefaults.standard
     
-    var preferences: Preferences?
     var emotion = "No Data"
     
     override func viewDidLoad() {
