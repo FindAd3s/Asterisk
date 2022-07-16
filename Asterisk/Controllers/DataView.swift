@@ -9,12 +9,26 @@ import UIKit
 
 class DataView: UIViewController {
     
-    var emotion: String?
+    var blendEmotion: String?
+    var cnnEmotion: String?
+    var defaults = UserDefaults()
     
-    @IBOutlet weak var emotionLabel: UILabel!
+    @IBOutlet weak var cnnEmotionLabel: UILabel!
+    @IBOutlet weak var blendEmotionLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        emotionLabel.text = "Emotion of user: \(emotion ?? "No data")"
+        
+        if let bEmotion = defaults.string(forKey: "UserBlendShapeEmotion") { // Access UserDefault
+               blendEmotion = bEmotion
+        }
+        
+        if let cEmotion = defaults.string(forKey: "UserCNNEmotion") { // Access UserDefault
+               cnnEmotion = cEmotion
+        }
+                       
+        cnnEmotionLabel.text = cnnEmotion ?? "No data"
+        blendEmotionLabel.text = blendEmotion ?? "No data"
         // Do any additional setup after loading the view.
     }
     

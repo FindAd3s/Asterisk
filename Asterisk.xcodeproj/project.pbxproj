@@ -7,22 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F10975A2881A2FC00B34860 /* blendShapeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1097592881A2FC00B34860 /* blendShapeViewController.swift */; };
+		3F10975C2881A30C00B34860 /* blendShapeDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F10975B2881A30C00B34860 /* blendShapeDataViewController.swift */; };
 		3F8035AE2850986000D48ACD /* DataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8035AD2850986000D48ACD /* DataView.swift */; };
 		3FA01AD928192CB700365F14 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA01AD828192CB700365F14 /* AppDelegate.swift */; };
 		3FA01ADB28192CB700365F14 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA01ADA28192CB700365F14 /* SceneDelegate.swift */; };
 		3FA01AE028192CB700365F14 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FA01ADE28192CB700365F14 /* Main.storyboard */; };
 		3FA01AE228192CB900365F14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FA01AE128192CB900365F14 /* Assets.xcassets */; };
 		3FA01AE528192CB900365F14 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FA01AE328192CB900365F14 /* LaunchScreen.storyboard */; };
-		3FA2EBC828586453003DB1A8 /* SpotifyPreferences1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA2EBC728586453003DB1A8 /* SpotifyPreferences1View.swift */; };
-		3FA2EBCA28586D27003DB1A8 /* SpotifyPreferences2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA2EBC928586D27003DB1A8 /* SpotifyPreferences2View.swift */; };
-		3FA2EBCC28587994003DB1A8 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA2EBCB28587994003DB1A8 /* SignInView.swift */; };
-		3FCD433D2848E23900504722 /* PreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCD433C2848E23900504722 /* PreferencesView.swift */; };
 		3FCD433F2848E30100504722 /* AREmotionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCD433E2848E30100504722 /* AREmotionView.swift */; };
 		3FCD43412848E41200504722 /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCD43402848E41200504722 /* MainMenuView.swift */; };
+		3FCF7900288177860018A2CA /* CNNViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCF78FF288177860018A2CA /* CNNViewController.swift */; };
+		3FCF7902288185590018A2CA /* CNNDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCF7901288185590018A2CA /* CNNDataViewController.swift */; };
+		3FE0D320285C779000690B41 /* EmotionDetectionModel1.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 3FE0D31F285C778F00690B41 /* EmotionDetectionModel1.mlmodel */; };
+		3FE0D322285C9C6300690B41 /* EmotionModelV2.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 3FE0D321285C9C6200690B41 /* EmotionModelV2.mlmodel */; };
 		3FFF26A82853817B0057FC96 /* CNNEmotions.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = 3FFF26A72853817B0057FC96 /* CNNEmotions.mlpackage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F1097592881A2FC00B34860 /* blendShapeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = blendShapeViewController.swift; sourceTree = "<group>"; };
+		3F10975B2881A30C00B34860 /* blendShapeDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = blendShapeDataViewController.swift; sourceTree = "<group>"; };
 		3F8035AD2850986000D48ACD /* DataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataView.swift; sourceTree = "<group>"; };
 		3FA01AD528192CB700365F14 /* Asterisk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Asterisk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FA01AD828192CB700365F14 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -31,12 +35,12 @@
 		3FA01AE128192CB900365F14 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3FA01AE428192CB900365F14 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3FA01AE628192CB900365F14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3FA2EBC728586453003DB1A8 /* SpotifyPreferences1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyPreferences1View.swift; sourceTree = "<group>"; };
-		3FA2EBC928586D27003DB1A8 /* SpotifyPreferences2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyPreferences2View.swift; sourceTree = "<group>"; };
-		3FA2EBCB28587994003DB1A8 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
-		3FCD433C2848E23900504722 /* PreferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PreferencesView.swift; path = Asterisk/PreferencesView.swift; sourceTree = SOURCE_ROOT; };
 		3FCD433E2848E30100504722 /* AREmotionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AREmotionView.swift; sourceTree = "<group>"; };
 		3FCD43402848E41200504722 /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
+		3FCF78FF288177860018A2CA /* CNNViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNNViewController.swift; sourceTree = "<group>"; };
+		3FCF7901288185590018A2CA /* CNNDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNNDataViewController.swift; sourceTree = "<group>"; };
+		3FE0D31F285C778F00690B41 /* EmotionDetectionModel1.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = EmotionDetectionModel1.mlmodel; sourceTree = "<group>"; };
+		3FE0D321285C9C6200690B41 /* EmotionModelV2.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = EmotionModelV2.mlmodel; sourceTree = "<group>"; };
 		3FFF26A72853817B0057FC96 /* CNNEmotions.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; name = CNNEmotions.mlpackage; path = "../../../CoreML/ARKit-CoreML-Emotion-Classification/ARKit-CoreML-Emotion-Classification/ARKit-CoreML-Emotion-Classification/CNNEmotions.mlpackage"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -54,13 +58,13 @@
 		3F882C1A2848C83100F71985 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				3FCD433C2848E23900504722 /* PreferencesView.swift */,
 				3FCD433E2848E30100504722 /* AREmotionView.swift */,
 				3FCD43402848E41200504722 /* MainMenuView.swift */,
 				3F8035AD2850986000D48ACD /* DataView.swift */,
-				3FA2EBC728586453003DB1A8 /* SpotifyPreferences1View.swift */,
-				3FA2EBC928586D27003DB1A8 /* SpotifyPreferences2View.swift */,
-				3FA2EBCB28587994003DB1A8 /* SignInView.swift */,
+				3FCF78FF288177860018A2CA /* CNNViewController.swift */,
+				3FCF7901288185590018A2CA /* CNNDataViewController.swift */,
+				3F1097592881A2FC00B34860 /* blendShapeViewController.swift */,
+				3F10975B2881A30C00B34860 /* blendShapeDataViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -107,7 +111,9 @@
 				3FA01AE128192CB900365F14 /* Assets.xcassets */,
 				3FA01AE328192CB900365F14 /* LaunchScreen.storyboard */,
 				3FA01AE628192CB900365F14 /* Info.plist */,
+				3FE0D31F285C778F00690B41 /* EmotionDetectionModel1.mlmodel */,
 				3FFF26A72853817B0057FC96 /* CNNEmotions.mlpackage */,
+				3FE0D321285C9C6200690B41 /* EmotionModelV2.mlmodel */,
 			);
 			path = Asterisk;
 			sourceTree = "<group>";
@@ -183,16 +189,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3FA2EBC828586453003DB1A8 /* SpotifyPreferences1View.swift in Sources */,
 				3F8035AE2850986000D48ACD /* DataView.swift in Sources */,
 				3FCD433F2848E30100504722 /* AREmotionView.swift in Sources */,
-				3FA2EBCA28586D27003DB1A8 /* SpotifyPreferences2View.swift in Sources */,
-				3FA2EBCC28587994003DB1A8 /* SignInView.swift in Sources */,
+				3FCF7900288177860018A2CA /* CNNViewController.swift in Sources */,
 				3FCD43412848E41200504722 /* MainMenuView.swift in Sources */,
+				3F10975C2881A30C00B34860 /* blendShapeDataViewController.swift in Sources */,
+				3FE0D322285C9C6300690B41 /* EmotionModelV2.mlmodel in Sources */,
 				3FA01AD928192CB700365F14 /* AppDelegate.swift in Sources */,
 				3FA01ADB28192CB700365F14 /* SceneDelegate.swift in Sources */,
+				3FE0D320285C779000690B41 /* EmotionDetectionModel1.mlmodel in Sources */,
+				3F10975A2881A2FC00B34860 /* blendShapeViewController.swift in Sources */,
+				3FCF7902288185590018A2CA /* CNNDataViewController.swift in Sources */,
 				3FFF26A82853817B0057FC96 /* CNNEmotions.mlpackage in Sources */,
-				3FCD433D2848E23900504722 /* PreferencesView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,9 +350,12 @@
 				DEVELOPMENT_TEAM = AG9V5Z8VV5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Asterisk/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Camera will be used for face recognition.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = armv7;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -352,7 +363,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.TeamAsterisk.Asterisk;
+				PRODUCT_BUNDLE_IDENTIFIER = com.TeamAsterisk.Asterisk1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -370,9 +381,12 @@
 				DEVELOPMENT_TEAM = AG9V5Z8VV5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Asterisk/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Camera will be used for face recognition.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = armv7;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -380,7 +394,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.TeamAsterisk.Asterisk;
+				PRODUCT_BUNDLE_IDENTIFIER = com.TeamAsterisk.Asterisk1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

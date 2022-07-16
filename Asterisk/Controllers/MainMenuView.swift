@@ -18,7 +18,7 @@ class MainMenuView: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateUI()
+//        updateUI()
         
         
         // Do any additional setup after loading the view.
@@ -31,7 +31,7 @@ class MainMenuView: UIViewController {
         
 
         view.addSubview(spinner)
-        updateUI()
+//        updateUI()
 
     }
     
@@ -42,11 +42,19 @@ class MainMenuView: UIViewController {
             return spinner
         }()
     
-    @IBAction func preferencesButton(_ sender: UIButton) {
-        print("Preferences Button Pressed")
+    @IBAction func cnnEmotionButton(_ sender: UIButton) {
+        print("CNNEmotion Button Pressed")
         
-        self.performSegue(withIdentifier: "goToPreferences", sender: self)
+        self.performSegue(withIdentifier: "goToCNN", sender: self)
     }
+    
+    @IBAction func blendShapeButton(_ sender: UIButton) {
+        print("blendShape Button Pressed")
+        
+        self.performSegue(withIdentifier: "goToBlendShape", sender: self)
+    }
+    
+    
     
 //    override func prepare(for segue: UIStoryboardSegue, sender:Any?){
 //        if segue.identifier == "goToEmotionRec"{
@@ -56,11 +64,11 @@ class MainMenuView: UIViewController {
 //
 //    }
     
-    func updateUI(){
-        if let uEmotion = defaults.string(forKey: "UserEmotion") { // Access UserDefault
-            emotion = uEmotion
-        }
-        emotionOfUser.text = emotion
-    }
+//    func updateUI(){
+//        if let uEmotion = defaults.string(forKey: "UserEmotion") { // Access UserDefault
+//            emotion = uEmotion
+//        }
+//        emotionOfUser.text = emotion
+//    }
 }
 
