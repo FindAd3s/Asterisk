@@ -11,14 +11,28 @@ class MainMenuView: UIViewController {
 
     
     @IBOutlet weak var emotionOfUser: UILabel!
+    @IBOutlet weak var mainSwitch: UISwitch!
     
     var defaults = UserDefaults.standard
-    
+    var conNode: Bool?
+    var strNode: String? = "true"
     var emotion = "No Data"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        updateUI()
+        if let cond = defaults.string(forKey: "NodeConditional") { // Access UserDefault
+                   strNode = cond
+               }
+               
+        conNode = Bool(strNode ?? "true")
+        print(strNode!)
+        print(conNode!)
+        if conNode == true{
+            mainSwitch.isOn = true
+        }
+        else{
+            mainSwitch.isOn = false
+        }
         
         
         // Do any additional setup after loading the view.
@@ -33,6 +47,25 @@ class MainMenuView: UIViewController {
         view.addSubview(spinner)
 //        updateUI()
 
+    }
+    @IBAction func switchStateChanged(_ sender: UISwitch) {
+        if mainSwitch.isOn{
+            
+            conNode = true
+            strNode = "true"
+            self.defaults.set(strNode, forKey: "NodeConditional")
+            
+            
+        }
+        else{
+            
+            conNode = false
+            strNode = "false"
+            self.defaults.set(strNode, forKey: "NodeConditional")
+            
+            
+        }
+        
     }
     
     private let spinner: UIActivityIndicatorView = {

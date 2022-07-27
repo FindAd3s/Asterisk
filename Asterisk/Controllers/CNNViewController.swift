@@ -15,8 +15,8 @@ class CNNViewController: UIViewController, ARSCNViewDelegate{
     
     var defaults = UserDefaults.standard
     var facePoseResult = ""
-    
-    
+    var conNode: Bool?
+    var strNode: String? = "true"
     var emotion = "No Emotion Presented"
     //The sceneview that we are going to display.
 //    private let sceneView = ARSCNView(frame: UIScreen.main.bounds)
@@ -34,7 +34,15 @@ class CNNViewController: UIViewController, ARSCNViewDelegate{
         
         sceneView.delegate = self
         sceneView.showsStatistics = true
-     
+        
+        if let cond = defaults.string(forKey: "NodeConditional") { // Access UserDefault
+                   strNode = cond
+               }
+               
+        conNode = Bool(strNode ?? "true")
+        print(strNode!)
+        print(conNode!)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -57,7 +65,14 @@ class CNNViewController: UIViewController, ARSCNViewDelegate{
     func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
         let faceMesh = ARSCNFaceGeometry(device: sceneView.device!)
         let node = SCNNode(geometry: faceMesh)
-        node.geometry?.firstMaterial?.fillMode = .lines
+        
+        if conNode == true{
+            node.geometry?.firstMaterial?.fillMode = .lines
+        }
+        else{
+            node.geometry?.firstMaterial?.transparency = 0
+        }
+        
         return node
     }
 

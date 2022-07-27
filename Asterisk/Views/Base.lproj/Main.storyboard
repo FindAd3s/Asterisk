@@ -21,7 +21,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y4m-N4-YX9">
-                                <rect key="frame" x="60" y="486" width="314" height="50"/>
+                                <rect key="frame" x="50" y="572" width="314" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" systemColor="systemBackgroundColor"/>
                                 <state key="normal" title="Button"/>
@@ -36,7 +36,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TnI-sF-Oae">
-                                <rect key="frame" x="60" y="562" width="314" height="50"/>
+                                <rect key="frame" x="50" y="648" width="314" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" systemColor="systemBackgroundColor"/>
                                 <state key="normal" title="Button"/>
@@ -51,7 +51,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M17-I4-8GT">
-                                <rect key="frame" x="60" y="637" width="314" height="50"/>
+                                <rect key="frame" x="50" y="723" width="314" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" systemColor="systemBackgroundColor"/>
                                 <state key="normal" title="Button"/>
@@ -65,12 +65,27 @@
                                     <action selector="blendShapeButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a8H-Nq-4WE"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enable Tracking View" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yj1-e0-os9">
+                                <rect key="frame" x="50" y="492" width="288" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="guy-RW-O28">
+                                <rect key="frame" x="317" y="494" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="switchStateChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="Dv5-dT-b5d"/>
+                                </connections>
+                            </switch>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.14117647059999999" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="RHb-LF-Oeg"/>
                     <connections>
+                        <outlet property="mainSwitch" destination="guy-RW-O28" id="55a-dN-aUM"/>
                         <segue destination="MVZ-bM-7Uf" kind="presentation" identifier="goToEmotionRec" modalPresentationStyle="overFullScreen" id="4VH-P2-sOL"/>
                         <segue destination="C2D-YK-YW3" kind="presentation" identifier="goToCNN" modalPresentationStyle="overFullScreen" id="vNv-Lg-G4h"/>
                         <segue destination="OA4-2n-Hi3" kind="presentation" identifier="goToBlendShape" modalPresentationStyle="overFullScreen" id="WR1-F6-EgU"/>
@@ -210,7 +225,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="emotion" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t4G-aU-wGr">
-                                <rect key="frame" x="20" y="481" width="106" height="36"/>
+                                <rect key="frame" x="20" y="481" width="291" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>

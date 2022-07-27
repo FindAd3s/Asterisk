@@ -16,6 +16,8 @@ class blendShapeViewController: UIViewController, ARSCNViewDelegate {
     
     var defaults = UserDefaults.standard
     var facePoseResult = ""
+    var conNode: Bool?
+    var strNode: String? = "true"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +25,15 @@ class blendShapeViewController: UIViewController, ARSCNViewDelegate {
         guard ARFaceTrackingConfiguration.isSupported else {
             fatalError("Face tracking not available on this on this device model!")
         }
+        if let cond = defaults.string(forKey: "NodeConditional") { // Access UserDefault
+           strNode = cond
+       }
+               
+        conNode = Bool(strNode ?? "true")
+        print(strNode!)
+        print(conNode!)
+                
+        
         
 //        outputView.layer.cornerRadius = 15
         sceneView.delegate = self
@@ -50,7 +61,14 @@ class blendShapeViewController: UIViewController, ARSCNViewDelegate {
     func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
         let faceMesh = ARSCNFaceGeometry(device: sceneView.device!)
         let node = SCNNode(geometry: faceMesh)
-        node.geometry?.firstMaterial?.fillMode = .lines
+        
+        if conNode == true{
+            node.geometry?.firstMaterial?.fillMode = .lines
+        }
+        else{
+            node.geometry?.firstMaterial?.transparency = 0
+        }
+        
         return node
     }
     

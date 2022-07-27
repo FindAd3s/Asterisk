@@ -13,12 +13,14 @@ class AREmotionView: UIViewController, ARSCNViewDelegate {
     @IBOutlet weak var userEmotionText: UILabel!
     @IBOutlet weak var sceneView: ARSCNView!
     @IBOutlet weak var userBlendShapeText: UILabel!
+//    @IBOutlet weak var userSwitch: UISwitch!
     
     var defaults = UserDefaults.standard
     var facePoseResult = ""
-    
-    
+    var conNode: Bool?
+    var strNode: String? = "true"
     var cnnEmotion = "No Emotion Presented"
+    
     //The sceneview that we are going to display.
 //    private let sceneView = ARSCNView(frame: UIScreen.main.bounds)
     //The CoreML model we use for emotion classification.
@@ -37,6 +39,22 @@ class AREmotionView: UIViewController, ARSCNViewDelegate {
         sceneView.delegate = self
         sceneView.showsStatistics = true
         sceneView.session.run(ARFaceTrackingConfiguration(), options: [.resetTracking, .removeExistingAnchors])
+//        userSwitch.isOn = false
+        
+        if let cond = defaults.string(forKey: "NodeConditional") { // Access UserDefault
+                   strNode = cond
+               }
+               
+        conNode = Bool(strNode ?? "true")
+        print(strNode!)
+        print(conNode!)
+//        if conNode == true{
+//            userSwitch.isOn = true
+//        }
+//        else{
+//            userSwitch.isOn = false
+//        }
+        
     }
 
 //    /// Creates a scene node containing yellow coloured text.
@@ -65,13 +83,54 @@ class AREmotionView: UIViewController, ARSCNViewDelegate {
 //        self.dismiss(animated: true, completion: nil)
     }
 
+//    @IBAction func scnRendererSwitch(_ sender: UISwitch) {
+//        if scnRendererSwitch.on{
+//            testBool = true
+//            print(testBool)
+//        }
+//        else{
+//            testBool = false
+//            print(testBool)
+//        }
+//    }
     @objc(renderer:nodeForAnchor:) func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
         guard let device = sceneView.device else { return nil }
         let node = SCNNode(geometry: ARSCNFaceGeometry(device: device))
-        //Projects the white lines on the face.
-        node.geometry?.firstMaterial?.fillMode = .lines
+//        //Projects the white lines on the face.
+        
+        if conNode == true{
+            node.geometry?.firstMaterial?.fillMode = .lines
+        }
+        else{
+            node.geometry?.firstMaterial?.transparency = 0
+        }
+        
+        
+        
+//
         return node
+//        return nil
     }
+//    @IBAction func switchStateChanged(_ sender: UISwitch) {
+//        if userSwitch.isOn{
+//
+//            conNode = true
+//            strNode = "true"
+//            self.defaults.set(strNode, forKey: "NodeConditional")
+//
+//
+//        }
+//        else{
+//
+//            conNode = false
+//            strNode = "false"
+//            self.defaults.set(strNode, forKey: "NodeConditional")
+//
+//
+//        }
+//    }
+    
+    
 
 //    @objc(renderer:didAddNode:forAnchor:) func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
 //        guard let faceGeometry = node.geometry as? ARSCNFaceGeometry, textNode == nil else { return }
@@ -115,9 +174,9 @@ class AREmotionView: UIViewController, ARSCNViewDelegate {
         let smileLeft = anchor.blendShapes[.mouthSmileLeft]
         let smileRight = anchor.blendShapes[.mouthSmileRight]
         let innerUp = anchor.blendShapes[.browInnerUp]
-        let tongue = anchor.blendShapes[.tongueOut]
-        let cheekPuff = anchor.blendShapes[.cheekPuff]
-        let eyeBlinkLeft = anchor.blendShapes[.eyeBlinkLeft]
+//        let tongue = anchor.blendShapes[.tongueOut]
+//        let cheekPuff = anchor.blendShapes[.cheekPuff]
+//        let eyeBlinkLeft = anchor.blendShapes[.eyeBlinkLeft]
         let jawOpen = anchor.blendShapes[.jawOpen]
         let browLeft = anchor.blendShapes[.browDownLeft]
         let browRight = anchor.blendShapes[.browDownRight]
