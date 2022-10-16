@@ -87,6 +87,11 @@ class MainMenuView: UIViewController {
         self.performSegue(withIdentifier: "goToBlendShape", sender: self)
     }
     
+    @IBAction func asteriskButton(_ sender: Any) {
+        print("blendShape Button Pressed")
+        
+        self.performSegue(withIdentifier: "goToAsterisk", sender: self)
+    }
     
     
 //    override func prepare(for segue: UIStoryboardSegue, sender:Any?){
