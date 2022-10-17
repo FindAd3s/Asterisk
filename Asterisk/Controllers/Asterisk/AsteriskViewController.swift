@@ -89,35 +89,50 @@ class AsteriskViewController: UIViewController, ARSCNViewDelegate {
     func facePoseAnalyzer(anchor: ARFaceAnchor) {
         let smileLeft = anchor.blendShapes[.mouthSmileLeft]
         let smileRight = anchor.blendShapes[.mouthSmileRight]
-        let innerUp = anchor.blendShapes[.browInnerUp]
+//        let innerUp = anchor.blendShapes[.browInnerUp]
 //        let tongue = anchor.blendShapes[.tongueOut]
 //        let cheekPuff = anchor.blendShapes[.cheekPuff]
 //        let eyeBlinkLeft = anchor.blendShapes[.eyeBlinkLeft]
-//        let jawOpen = anchor.blendShapes[.jawOpen]
+        let jawOpen = anchor.blendShapes[.jawOpen]
         let browLeft = anchor.blendShapes[.browDownLeft]
         let browRight = anchor.blendShapes[.browDownRight]
         let frownLeft = anchor.blendShapes[.mouthFrownLeft]
         let frownRight = anchor.blendShapes[.mouthFrownRight]
+        let blinkLeft = anchor.blendShapes[.eyeBlinkLeft]
+        let blinkRight = anchor.blendShapes[.eyeBlinkRight]
+        
 //        let mouthLeft = anchor.blendShapes[.mouthStretchLeft]
 //        let mouthRight = anchor.blendShapes[.mouthStretchRight]
         
         var newFacePoseResult = "Neutral"
         
-//        if ((jawOpen?.decimalValue ?? 0.0) + (innerUp?.decimalValue ?? 0.0) + (innerUp?.decimalValue ?? 0.0)) > 0.8 {
-//            newFacePoseResult = "😧 Shocked"
-//        }
         
-        if ((browLeft?.decimalValue ?? 0.0) + (browRight?.decimalValue ?? 0.0) + (innerUp?.decimalValue ?? 0.0)) > 0.9 {
+        if ((browLeft?.decimalValue ?? 0.0) + (browRight?.decimalValue ?? 0.0)) > 0.9 {
             newFacePoseResult = "Angry"
         }
         
-        if ((frownLeft?.decimalValue ?? 0.0) + (frownRight?.decimalValue ?? 0.0)) > 0.4 {
-            newFacePoseResult = "Sad"
+        if ((frownLeft?.decimalValue ?? 0.0) + (frownRight?.decimalValue ?? 0.0) + (jawOpen?.decimalValue ?? 0.0)) > 0.1 {
+            if ((browLeft?.decimalValue ?? 0.0) + (browRight?.decimalValue ?? 0.0)) > 0.9 {
+                newFacePoseResult = "Angry"
+            }
+            else {
+                newFacePoseResult = "Sad"
+            }
         }
         
         if ((smileLeft?.decimalValue ?? 0.0) + (smileRight?.decimalValue ?? 0.0)) > 0.5 {
-            newFacePoseResult = "Happy"
+            if ((browLeft?.decimalValue ?? 0.0) + (browRight?.decimalValue ?? 0.0)) > 0.9 {
+                newFacePoseResult = "Angry"
+            }
+            else {
+                newFacePoseResult = "Happy"
+            }
         }
+        
+//        if ((blinkLeft?.decimalValue ?? 0.0) + (blinkRight?.decimalValue ?? 0.0) + (jawOpen?.decimalValue ?? 0.0)) > 0.4 {
+//            newFacePoseResult = "Sleepy"
+//        }
+               
         
         if self.facePoseResult != newFacePoseResult {
             self.facePoseResult = newFacePoseResult
