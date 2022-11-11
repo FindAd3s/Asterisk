@@ -10,6 +10,86 @@ import ARKit
 
 class AsteriskViewController: UIViewController, ARSCNViewDelegate {
     
+    struct Constants{
+        
+        /// Emotion
+        static var emotion = ""
+        
+        /// Left Eye
+        static let eyeBlinkLeft = 0.0
+        static let eyeLookDownLeft = 0.0
+        static let eyeLookInLeft = 0.0
+        static let eyeLookOutLeft = 0.0
+        static let eyeLookUpLeft = 0.0
+        static let eyeSquintLeft = 0.0
+        static let eyeWideLeft = 0.0
+        
+        /// Right Eye
+        static let eyeBlinkRight = 0.0
+        static let eyeLookDownRight = 0.0
+        static let eyeLookInRight = 0.0
+        static let eyeLookOutRight = 0.0
+        static let eyeLookUpRight = 0.0
+        static let eyeSquintRight = 0.0
+        static let eyeWideRight = 0.0
+        
+        /// Mouth
+        static let mouthFunnel = 0.0
+        static let mouthPucker = 0.0
+        static let mouthLeft = 0.0
+        static let mouthRight = 0.0
+        static var mouthSmileLeft = 0.0
+        static var mouthSmileRight = 0.0
+        static var mouthFrownLeft = 0.0
+        static var mouthFrownRight = 0.0
+        static let mouthDimpleLeft = 0.0
+        static let mouthDimpleRight = 0.0
+        static let mouthStretchLeft = 0.0
+        static let mouthStretchRight = 0.0
+        static let mouthRollLower = 0.0
+        static let mouthRollUpper = 0.0
+        static let mouthShrugLower = 0.0
+        static let mouthShrugUpper = 0.0
+        static let mouthPressLeft = 0.0
+        static let mouthPressRight = 0.0
+        static let mouthLowerDownLeft = 0.0
+        static let mouthLowerDownRight = 0.0
+        static let mouthUpperUpLeft = 0.0
+        static let mouthUpperUpRight = 0.0
+        
+        /// Jaw
+        static let jawForward = 0.0
+        static let jawLeft = 0.0
+        static let jawRight = 0.0
+        static let jawOpen = 0.0
+        
+        /// Eyebrows
+        static var browDownLeft = 0.0
+        static var browDownRight = 0.0
+        static let browInnerUp = 0.0
+        static let browOuterUpLeft = 0.0
+        static let browOuterUpRight = 0.0
+        
+        /// Cheeks
+        static let cheekPuff = 0.0
+        static let cheekSquintLeft = 0.0
+        static let cheekSquintRight = 0.0
+        
+        /// Nose
+        static let noseSneerLeft = 0.0
+        static let noseSneerRight = 0.0
+        
+        /// Tounge
+        static let toungeOut = 0.0
+                
+
+//
+//        print("Emotion: \(newFacePoseResult)")
+//        print("mouthSmileLeft: \(smileLeft!)")
+//        print("mouthSmileRight: \(smileRight!)")
+//        print("browInnerUp: \(innerUp!)")
+    }
+    
     @IBOutlet var sceneView: ARSCNView!
 //    @IBOutlet weak var outputView: UIView!
     @IBOutlet weak var outputLabel: UILabel!
@@ -89,7 +169,7 @@ class AsteriskViewController: UIViewController, ARSCNViewDelegate {
     func facePoseAnalyzer(anchor: ARFaceAnchor) {
         let smileLeft = anchor.blendShapes[.mouthSmileLeft]
         let smileRight = anchor.blendShapes[.mouthSmileRight]
-//        let innerUp = anchor.blendShapes[.browInnerUp]
+        let innerUp = anchor.blendShapes[.browInnerUp]
 //        let tongue = anchor.blendShapes[.tongueOut]
 //        let cheekPuff = anchor.blendShapes[.cheekPuff]
 //        let eyeBlinkLeft = anchor.blendShapes[.eyeBlinkLeft]
@@ -104,6 +184,7 @@ class AsteriskViewController: UIViewController, ARSCNViewDelegate {
 //        let mouthLeft = anchor.blendShapes[.mouthStretchLeft]
 //        let mouthRight = anchor.blendShapes[.mouthStretchRight]
         
+        
         var newFacePoseResult = "Neutral"
         
         
@@ -111,7 +192,7 @@ class AsteriskViewController: UIViewController, ARSCNViewDelegate {
             newFacePoseResult = "Angry"
         }
         
-        if ((frownLeft?.decimalValue ?? 0.0) + (frownRight?.decimalValue ?? 0.0) + (jawOpen?.decimalValue ?? 0.0)) > 0.1 {
+        if ((frownLeft?.decimalValue ?? 0.0) + (frownRight?.decimalValue ?? 0.0) + (jawOpen?.decimalValue ?? 0.0)) > 0.2 {
             if ((browLeft?.decimalValue ?? 0.0) + (browRight?.decimalValue ?? 0.0)) > 0.9 {
                 newFacePoseResult = "Angry"
             }
@@ -138,6 +219,19 @@ class AsteriskViewController: UIViewController, ARSCNViewDelegate {
             self.facePoseResult = newFacePoseResult
         }
         
+//
+        
+        
+        AsteriskViewController.Constants.emotion = newFacePoseResult
+        AsteriskViewController.Constants.mouthSmileLeft = smileLeft as! Double
+        AsteriskViewController.Constants.mouthSmileRight = smileRight as! Double
+        AsteriskViewController.Constants.mouthFrownLeft = frownLeft as! Double
+        AsteriskViewController.Constants.mouthFrownRight = frownRight as! Double
+        AsteriskViewController.Constants.browDownLeft = browLeft as! Double
+        AsteriskViewController.Constants.browDownRight = browRight as! Double
+        AsteriskViewController.Constants.mouthSmileLeft = smileLeft as! Double
+        
+        
     }
     
     func session(_ session: ARSession, didFailWithError error: Error) {
@@ -156,7 +250,19 @@ class AsteriskViewController: UIViewController, ARSCNViewDelegate {
     }
     
     @IBAction func captureButtonPressed(_ sender: UIButton) {
-        print(facePoseResult)
+//        print(facePoseResult)
+        
+//        print("", terminator: Array(repeating: "\n", count: 20).joined())
+        
+        print("\nEmotion: \(AsteriskViewController.Constants.emotion)\n")
+        
+        print("mouthSmileLeft: \(AsteriskViewController.Constants.mouthSmileLeft)")
+        print("mouthSmileRight: \(AsteriskViewController.Constants.mouthSmileRight)")
+        print("mouthFrownLeft: \(AsteriskViewController.Constants.mouthFrownLeft)")
+        print("mouthFrownRight: \(AsteriskViewController.Constants.mouthFrownRight)")
+        print("browDownLeft: \(AsteriskViewController.Constants.browDownLeft)")
+        print("browDownRight: \(AsteriskViewController.Constants.browDownRight)")
+        print("jawOpen: \(AsteriskViewController.Constants.jawOpen)")
                 
         self.defaults.set(facePoseResult, forKey: "AsteriskEmotion") // Publish to UserDefaults
         
