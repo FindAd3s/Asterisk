@@ -25,8 +25,8 @@ class MainMenuView: UIViewController {
                }
                
         conNode = Bool(strNode ?? "true")
-        print(strNode!)
-        print(conNode!)
+//        print(strNode!)
+//        print(conNode!)
         if conNode == true{
             mainSwitch.isOn = true
         }

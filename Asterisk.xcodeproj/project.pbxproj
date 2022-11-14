@@ -18,6 +18,7 @@
 		3FA01AE228192CB900365F14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FA01AE128192CB900365F14 /* Assets.xcassets */; };
 		3FA01AE528192CB900365F14 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FA01AE328192CB900365F14 /* LaunchScreen.storyboard */; };
 		3FA9947E28ED504D00F413F0 /* CNNEmotions.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 3FA9947D28ED504D00F413F0 /* CNNEmotions.mlmodel */; };
+		3FB46A492920074F00DD2D74 /* EmotionSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB46A482920074F00DD2D74 /* EmotionSelectViewController.swift */; };
 		3FCD433F2848E30100504722 /* AREmotionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCD433E2848E30100504722 /* AREmotionView.swift */; };
 		3FCD43412848E41200504722 /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCD43402848E41200504722 /* MainMenuView.swift */; };
 		3FCF7900288177860018A2CA /* CNNViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCF78FF288177860018A2CA /* CNNViewController.swift */; };
@@ -40,6 +41,7 @@
 		3FA01AE428192CB900365F14 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3FA01AE628192CB900365F14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3FA9947D28ED504D00F413F0 /* CNNEmotions.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = CNNEmotions.mlmodel; path = "../../../../Core ML Dependencies/Models/CNNEmotions.mlmodel"; sourceTree = "<group>"; };
+		3FB46A482920074F00DD2D74 /* EmotionSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionSelectViewController.swift; sourceTree = "<group>"; };
 		3FCD433E2848E30100504722 /* AREmotionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AREmotionView.swift; sourceTree = "<group>"; };
 		3FCD43402848E41200504722 /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
 		3FCF78FF288177860018A2CA /* CNNViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNNViewController.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 			children = (
 				3F6D9C7D28FBCE5500B363A5 /* AsteriskViewController.swift */,
 				3F6D9C8328FBD12A00B363A5 /* AsteriskDataViewController.swift */,
+				3FB46A482920074F00DD2D74 /* EmotionSelectViewController.swift */,
 			);
 			path = Asterisk;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 			files = (
 				3F8035AE2850986000D48ACD /* DataView.swift in Sources */,
 				3FCD433F2848E30100504722 /* AREmotionView.swift in Sources */,
+				3FB46A492920074F00DD2D74 /* EmotionSelectViewController.swift in Sources */,
 				3FCF7900288177860018A2CA /* CNNViewController.swift in Sources */,
 				3FA9947E28ED504D00F413F0 /* CNNEmotions.mlmodel in Sources */,
 				3FCD43412848E41200504722 /* MainMenuView.swift in Sources */,

@@ -316,6 +316,7 @@ class AsteriskViewController: UIViewController, ARSCNViewDelegate {
     }
     
     @IBAction func captureButtonPressed(_ sender: UIButton) {
+        var userPicked: String?
 //        print(facePoseResult)
         
 //        print("", terminator: Array(repeating: "\n", count: 20).joined())
@@ -390,7 +391,13 @@ class AsteriskViewController: UIViewController, ARSCNViewDelegate {
         print("\nTongue")
         print("tongueOut: \(AsteriskViewController.Constants.tongueOut)")
         */
+        
+        if let pickedEmotion = defaults.string(forKey: "PickedEmotion") { // Access UserDefault
+            userPicked = pickedEmotion
+        }
+        
         print("\n")
+        print(userPicked!)
         print(AsteriskViewController.Constants.emotion)
         
         print(AsteriskViewController.Constants.mouthSmileLeft)
