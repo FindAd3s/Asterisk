@@ -10,17 +10,35 @@ import UIKit
 class AsteriskDataViewController: UIViewController {
 
     var asteriskEmotion: String?
+    var maxEmotion: String?
+    var meanEmotion: String?
+    var medianEmotion: String?
     var defaults = UserDefaults.standard
     
     @IBOutlet weak var emotionLabel: UILabel!
+    @IBOutlet weak var maxLabel: UILabel!
+    @IBOutlet weak var meanLabel: UILabel!
+    @IBOutlet weak var medianLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let aEmotion = defaults.string(forKey: "AsteriskEmotion") { // Access UserDefault
+        if let aEmotion = defaults.string(forKey: "PickedEmotion") { // Access UserDefault
             asteriskEmotion = aEmotion
+        }
+        if let bEmotion = defaults.string(forKey: "MaxEmotion") { // Access UserDefault
+            maxEmotion = bEmotion
+        }
+        if let cEmotion = defaults.string(forKey: "MeanEmotion") { // Access UserDefault
+            meanEmotion = cEmotion
+        }
+        if let dEmotion = defaults.string(forKey: "MedianEmotion") { // Access UserDefault
+            medianEmotion = dEmotion
         }
                        
         emotionLabel.text = asteriskEmotion ?? "No data"
+        maxLabel.text = maxEmotion ?? "No data"
+        meanLabel.text = meanEmotion ?? "No data"
+        medianLabel.text = medianEmotion ?? "No data"
         // Do any additional setup after loading the view.
     }
     

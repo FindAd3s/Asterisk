@@ -232,7 +232,7 @@ class AsteriskViewController: UIViewController, ARSCNViewDelegate {
 //        if ((browLeft?.decimalValue ?? 0.0) + (browRight?.decimalValue ?? 0.0)) > 0.9 {
 //            maxNewFacePoseResult = "Angry"
 //        }
-//        
+//
 //        if (((frownLeft?.decimalValue ?? 0.0) + (frownRight?.decimalValue ?? 0.0)) > 0.9) && (((browLeft?.decimalValue ?? 0.0) + (browRight?.decimalValue ?? 0.0)) > 0.9) {
 //            maxNewFacePoseResult = "Sad"
 //        }
@@ -481,12 +481,15 @@ class AsteriskViewController: UIViewController, ARSCNViewDelegate {
             userPicked = pickedEmotion
         }
         
+        
         print("\n")
-//        print(userPicked!)
-        print("Intended Emotion: \(userPicked!)")
-        print("Max Emotion: \((AsteriskViewController.Constants.maxEmotion as String?)!)")
-        print("Median Emotion: \((AsteriskViewController.Constants.medianEmotion as String?)!)")
-        print("Mean Emotion: \((AsteriskViewController.Constants.meanEmotion as String?)!)")
+        print(userPicked!)
+//        print("Intended Emotion: \(userPicked!)")
+        print(AsteriskViewController.Constants.maxEmotion)
+        print(AsteriskViewController.Constants.medianEmotion)
+        print(AsteriskViewController.Constants.meanEmotion)
+//        print("Median Emotion: \((AsteriskViewController.Constants.medianEmotion as String?)!)")
+//        print("Mean Emotion: \((AsteriskViewController.Constants.meanEmotion as String?)!)")
         
         
         print(AsteriskViewController.Constants.mouthSmileLeft)
@@ -549,7 +552,10 @@ class AsteriskViewController: UIViewController, ARSCNViewDelegate {
         print(AsteriskViewController.Constants.tongueOut)
         
         
-        self.defaults.set(medianResult, forKey: "AsteriskEmotion") // Publish to UserDefaults
+        self.defaults.set(maxResult, forKey: "MaxEmotion") // Publish to UserDefaults
+        self.defaults.set(medianResult, forKey: "MedianEmotion") // Publish to UserDefaults
+        self.defaults.set(meanResult, forKey: "MeanEmotion") // Publish to UserDefaults
+        
         
         performSegue(withIdentifier: "goToAsteriskData", sender: self)
         
