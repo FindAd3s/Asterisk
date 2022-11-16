@@ -13,7 +13,10 @@ class AsteriskViewController: UIViewController, ARSCNViewDelegate {
     struct Constants{
         
         /// Emotion
-        static var emotion = ""
+        static var maxEmotion = ""
+        static var medianEmotion = ""
+        static var meanEmotion = ""
+        
         
         /// Left Eye
         static var eyeBlinkLeft = 0.0
@@ -96,6 +99,9 @@ class AsteriskViewController: UIViewController, ARSCNViewDelegate {
     
     var defaults = UserDefaults.standard
     var facePoseResult = ""
+    var medianResult = ""
+    var maxResult = ""
+    var meanResult = ""
     var conNode: Bool?
     var strNode: String? = "true"
     
@@ -158,7 +164,7 @@ class AsteriskViewController: UIViewController, ARSCNViewDelegate {
             facePoseAnalyzer(anchor: faceAnchor)
             
             DispatchQueue.main.async {
-                self.outputLabel.text = self.facePoseResult
+                self.outputLabel.text = self.medianResult
             }
             
         }
@@ -169,7 +175,7 @@ class AsteriskViewController: UIViewController, ARSCNViewDelegate {
     func facePoseAnalyzer(anchor: ARFaceAnchor) {
         let smileLeft = anchor.blendShapes[.mouthSmileLeft]
         let smileRight = anchor.blendShapes[.mouthSmileRight]
-        let innerUp = anchor.blendShapes[.browInnerUp]
+//        let innerUp = anchor.blendShapes[.browInnerUp]
 //        let tongue = anchor.blendShapes[.tongueOut]
 //        let cheekPuff = anchor.blendShapes[.cheekPuff]
 //        let eyeBlinkLeft = anchor.blendShapes[.eyeBlinkLeft]
@@ -178,51 +184,130 @@ class AsteriskViewController: UIViewController, ARSCNViewDelegate {
         let browRight = anchor.blendShapes[.browDownRight]
         let frownLeft = anchor.blendShapes[.mouthFrownLeft]
         let frownRight = anchor.blendShapes[.mouthFrownRight]
-        let blinkLeft = anchor.blendShapes[.eyeBlinkLeft]
-        let blinkRight = anchor.blendShapes[.eyeBlinkRight]
-        
+//        let blinkLeft = anchor.blendShapes[.eyeBlinkLeft]
+//        let blinkRight = anchor.blendShapes[.eyeBlinkRight]
+//        let mouthDLeft = anchor.blendShapes[.mouthLowerDownLeft]
+//        let mouthDRight = anchor.blendShapes[.mouthLowerDownRight]
+//        let mouthULeft = anchor.blendShapes[.mouthUpperUpLeft]
+//        let mouthURight = anchor.blendShapes[.mouthUpperUpRight]
+//        let squintLeft = anchor.blendShapes[.cheekSquintLeft]
+//        let squintRight = anchor.blendShapes[.cheekSquintRight]
 //        let mouthLeft = anchor.blendShapes[.mouthStretchLeft]
 //        let mouthRight = anchor.blendShapes[.mouthStretchRight]
         
         
-        var newFacePoseResult = "Neutral"
+        var maxNewFacePoseResult = "Neutral"
+        var medianNewFacePoseResult = "Neutral"
+        var meanNewFacePoseResult = "Neutral"
         
         
-        if ((browLeft?.decimalValue ?? 0.0) + (browRight?.decimalValue ?? 0.0)) > 0.9 {
-            newFacePoseResult = "Angry"
-        }
-        
-        if ((frownLeft?.decimalValue ?? 0.0) + (frownRight?.decimalValue ?? 0.0) + (jawOpen?.decimalValue ?? 0.0)) > 0.2 {
-            if ((browLeft?.decimalValue ?? 0.0) + (browRight?.decimalValue ?? 0.0)) > 0.9 {
-                newFacePoseResult = "Angry"
-            }
-            else {
-                newFacePoseResult = "Sad"
-            }
-        }
-        
-        if ((smileLeft?.decimalValue ?? 0.0) + (smileRight?.decimalValue ?? 0.0)) > 0.5 {
-            if ((browLeft?.decimalValue ?? 0.0) + (browRight?.decimalValue ?? 0.0)) > 0.9 {
-                newFacePoseResult = "Angry"
-            }
-            else {
-                newFacePoseResult = "Happy"
-            }
-        }
+//        if ((browLeft?.decimalValue ?? 0.0) + (browRight?.decimalValue ?? 0.0)) > 0.9 {
+//            newFacePoseResult = "Angry"
+//        }
+//
+//        if ((frownLeft?.decimalValue ?? 0.0) + (frownRight?.decimalValue ?? 0.0) + (jawOpen?.decimalValue ?? 0.0)) > 0.2 {
+//            if ((browLeft?.decimalValue ?? 0.0) + (browRight?.decimalValue ?? 0.0)) > 0.9 {
+//                newFacePoseResult = "Angry"
+//            }
+//            else {
+//                newFacePoseResult = "Sad"
+//            }
+//        }
+//
+//        if ((smileLeft?.decimalValue ?? 0.0) + (smileRight?.decimalValue ?? 0.0)) > 0.5 {
+//            if ((browLeft?.decimalValue ?? 0.0) + (browRight?.decimalValue ?? 0.0)) > 0.9 {
+//                newFacePoseResult = "Angry"
+//            }
+//            else {
+//                newFacePoseResult = "Happy"
+//            }
+//        }
         
 //        if ((blinkLeft?.decimalValue ?? 0.0) + (blinkRight?.decimalValue ?? 0.0) + (jawOpen?.decimalValue ?? 0.0)) > 0.4 {
 //            newFacePoseResult = "Sleepy"
 //        }
-               
         
-        if self.facePoseResult != newFacePoseResult {
-            self.facePoseResult = newFacePoseResult
+        /// Maximum values
+        
+//        if ((browLeft?.decimalValue ?? 0.0) + (browRight?.decimalValue ?? 0.0)) > 0.9 {
+//            maxNewFacePoseResult = "Angry"
+//        }
+//        
+//        if (((frownLeft?.decimalValue ?? 0.0) + (frownRight?.decimalValue ?? 0.0)) > 0.9) && (((browLeft?.decimalValue ?? 0.0) + (browRight?.decimalValue ?? 0.0)) > 0.9) {
+//            maxNewFacePoseResult = "Sad"
+//        }
+        
+//        if (smileLeft?.decimalValue ?? 0.0) > 0.9 && (smileRight?.decimalValue ?? 0.0) > 0.9 && (mouthDLeft?.decimalValue ?? 0.0) > 0.81 && (mouthDRight?.decimalValue ?? 0.0) > 0.81 && (mouthULeft?.decimalValue ?? 0.0) > 0.6 && (mouthURight?.decimalValue ?? 0.0) > 0.6 && (squintRight?.decimalValue ?? 0.0) > 0.81 && (squintRight?.decimalValue ?? 0.0) > 0.81{
+//            maxNewFacePoseResult = "Happy"
+//        }
+        
+        /// MAX VALUES
+        
+        if (smileLeft?.decimalValue ?? 0.0) >= 0.9281300306 && (smileRight?.decimalValue ?? 0.0) >= 0.9272118807 {
+            maxNewFacePoseResult = "Happy"
+        }
+        
+        if (browLeft?.decimalValue ?? 0.0) >= 0.8491612077 && (browRight?.decimalValue ?? 0.0) >= 0.849167347 {
+            maxNewFacePoseResult = "Angry"
+        }
+        
+        if (frownLeft?.decimalValue ?? 0.0) >= 0.8057038784 && (frownRight?.decimalValue ?? 0.0) >= 0.802146256 {
+            maxNewFacePoseResult = "Sad"
+        }
+        
+        /// MEDIAN VALUES
+        
+        if (smileLeft?.decimalValue ?? 0.0) >= 0.7713274956 && (smileRight?.decimalValue ?? 0.0) >= 0.7703960538 {
+            medianNewFacePoseResult = "Happy"
+        }
+        
+        if (browLeft?.decimalValue ?? 0.0) >= 0.6524838209 && (browRight?.decimalValue ?? 0.0) >= 0.6526123881 {
+            medianNewFacePoseResult = "Angry"
+        }
+        
+        if (frownLeft?.decimalValue ?? 0.0) >= 0.6319770813 && (frownRight?.decimalValue ?? 0.0) >= 0.6430873871 {
+            medianNewFacePoseResult = "Sad"
+        }
+        
+        /// MEAN VALUES
+        
+        if (smileLeft?.decimalValue ?? 0.0) >= 0.7244083531 && (smileRight?.decimalValue ?? 0.0) >= 0.7157017466 {
+            meanNewFacePoseResult = "Happy"
+        }
+        
+        if (browLeft?.decimalValue ?? 0.0) >= 0.6504860081 && (browRight?.decimalValue ?? 0.0) >= 0.6505315147 {
+            meanNewFacePoseResult = "Angry"
+        }
+        
+        if (frownLeft?.decimalValue ?? 0.0) >= 0.5523124052 && (frownRight?.decimalValue ?? 0.0) >= 0.5588933317 {
+            meanNewFacePoseResult = "Sad"
+        }
+        
+//        if (smileLeft?.decimalValue ?? 0.0) > 0.7 && (smileRight?.decimalValue ?? 0.0) > 0.7 && (mouthDLeft?.decimalValue ?? 0.0) > 0.4 && (mouthDRight?.decimalValue ?? 0.0) > 0.4 {
+//            medianNewFacePoseResult = "Happy"
+//        }
+        
+//      Possible 4th Group
+//        if (smileLeft?.decimalValue ?? 0.0) > 0.5 && (smileRight?.decimalValue ?? 0.0) > 0.5 && (mouthDLeft?.decimalValue ?? 0.0) > 0.4 && (mouthDRight?.decimalValue ?? 0.0) > 0.4 && (mouthULeft?.decimalValue ?? 0.0) > 0.4 && (mouthURight?.decimalValue ?? 0.0) > 0.4 && (squintRight?.decimalValue ?? 0.0) > 0.4 && (squintRight?.decimalValue ?? 0.0) > 0.4{
+//            newFacePoseResult = "Happy"
+//        }
+        
+        if self.medianResult != medianNewFacePoseResult {
+            self.medianResult = medianNewFacePoseResult
+        }
+        if self.maxResult != maxNewFacePoseResult {
+            self.maxResult = maxNewFacePoseResult
+        }
+        if self.meanResult != meanNewFacePoseResult {
+            self.meanResult = meanNewFacePoseResult
         }
         
 //
         /// Emotion Recognition data points
         
-        AsteriskViewController.Constants.emotion = newFacePoseResult
+        AsteriskViewController.Constants.medianEmotion = medianNewFacePoseResult
+        AsteriskViewController.Constants.maxEmotion = maxNewFacePoseResult
+        AsteriskViewController.Constants.meanEmotion = meanNewFacePoseResult
         AsteriskViewController.Constants.mouthSmileLeft = smileLeft as! Double//
         AsteriskViewController.Constants.mouthSmileRight = smileRight as! Double//
         AsteriskViewController.Constants.mouthFrownLeft = frownLeft as! Double//
@@ -397,8 +482,12 @@ class AsteriskViewController: UIViewController, ARSCNViewDelegate {
         }
         
         print("\n")
-        print(userPicked!)
-        print(AsteriskViewController.Constants.emotion)
+//        print(userPicked!)
+        print("Intended Emotion: \(userPicked!)")
+        print("Max Emotion: \((AsteriskViewController.Constants.maxEmotion as String?)!)")
+        print("Median Emotion: \((AsteriskViewController.Constants.medianEmotion as String?)!)")
+        print("Mean Emotion: \((AsteriskViewController.Constants.meanEmotion as String?)!)")
+        
         
         print(AsteriskViewController.Constants.mouthSmileLeft)
         print(AsteriskViewController.Constants.mouthSmileRight)
@@ -460,7 +549,7 @@ class AsteriskViewController: UIViewController, ARSCNViewDelegate {
         print(AsteriskViewController.Constants.tongueOut)
         
         
-        self.defaults.set(facePoseResult, forKey: "AsteriskEmotion") // Publish to UserDefaults
+        self.defaults.set(medianResult, forKey: "AsteriskEmotion") // Publish to UserDefaults
         
         performSegue(withIdentifier: "goToAsteriskData", sender: self)
         

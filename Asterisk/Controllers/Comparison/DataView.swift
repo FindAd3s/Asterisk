@@ -32,11 +32,17 @@ class DataView: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func mainMenuButton(_ sender: Any) {
-        performSegue(withIdentifier: "goToMainMenu1", sender: self)
+    @IBAction func algorithmXPicked(_ sender: UIButton) {
+        self.defaults.set("Algorithm X", forKey: "PickedAlgorithm") // Publish to UserDefaults
+        performSegue(withIdentifier: "goToResults", sender: self)
     }
     
-
+    @IBAction func algorithmYPicked(_ sender: UIButton) {
+        self.defaults.set("Algorithm Y", forKey: "PickedAlgorithm") // Publish to UserDefaults
+        performSegue(withIdentifier: "goToResults", sender: self)
+    }
+    
+    
     /*
     // MARK: - Navigation
 

@@ -46,8 +46,8 @@ class AREmotionView: UIViewController, ARSCNViewDelegate {
                }
                
         conNode = Bool(strNode ?? "true")
-        print(strNode!)
-        print(conNode!)
+//        print(strNode!)
+//        print(conNode!)
 //        if conNode == true{
 //            userSwitch.isOn = true
 //        }
@@ -74,7 +74,7 @@ class AREmotionView: UIViewController, ARSCNViewDelegate {
 //        sceneView.scene.rootNode.addChildNode(textNode)
 //    }
     @IBAction func captureButtonPressed(_ sender: UIButton) {
-        print(cnnEmotion)
+//        print(cnnEmotion)
                 
         self.defaults.set(cnnEmotion, forKey: "UserCNNEmotion") // Publish to UserDefaults
         self.defaults.set(facePoseResult, forKey: "UserBlendShapeEmotion")
