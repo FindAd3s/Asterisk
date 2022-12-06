@@ -13,32 +13,38 @@ class AsteriskDataViewController: UIViewController {
     var maxEmotion: String?
     var meanEmotion: String?
     var medianEmotion: String?
+    var oldAlgoEmotion: String?
     var defaults = UserDefaults.standard
     
     @IBOutlet weak var emotionLabel: UILabel!
-    @IBOutlet weak var maxLabel: UILabel!
     @IBOutlet weak var meanLabel: UILabel!
     @IBOutlet weak var medianLabel: UILabel!
+    @IBOutlet weak var bufferMedianLabel: UILabel!
+    @IBOutlet weak var oldAlgoLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         if let aEmotion = defaults.string(forKey: "PickedEmotion") { // Access UserDefault
             asteriskEmotion = aEmotion
         }
-        if let bEmotion = defaults.string(forKey: "MaxEmotion") { // Access UserDefault
+        if let bEmotion = defaults.string(forKey: "MeanEmotion") { // Access UserDefault
             maxEmotion = bEmotion
         }
-        if let cEmotion = defaults.string(forKey: "MeanEmotion") { // Access UserDefault
+        if let cEmotion = defaults.string(forKey: "MedianEmotion") { // Access UserDefault
             meanEmotion = cEmotion
         }
-        if let dEmotion = defaults.string(forKey: "MedianEmotion") { // Access UserDefault
+        if let dEmotion = defaults.string(forKey: "BufferMedianEmotion") { // Access UserDefault
             medianEmotion = dEmotion
         }
-                       
+        if let eEmotion = defaults.string(forKey: "oldAlgoEmotion") { // Access UserDefault
+            oldAlgoEmotion = eEmotion
+        }
+        
         emotionLabel.text = asteriskEmotion ?? "No data"
-        maxLabel.text = maxEmotion ?? "No data"
-        meanLabel.text = meanEmotion ?? "No data"
-        medianLabel.text = medianEmotion ?? "No data"
+        meanLabel.text = maxEmotion ?? "No data"
+        medianLabel.text = meanEmotion ?? "No data"
+        bufferMedianLabel.text = medianEmotion ?? "No data"
+        oldAlgoLabel.text = oldAlgoEmotion ?? "No Data"
         // Do any additional setup after loading the view.
     }
     

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3F10975A2881A2FC00B34860 /* blendShapeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1097592881A2FC00B34860 /* blendShapeViewController.swift */; };
 		3F10975C2881A30C00B34860 /* blendShapeDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F10975B2881A30C00B34860 /* blendShapeDataViewController.swift */; };
+		3F1FE70D292CE19800C0D9F1 /* resultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1FE70C292CE19800C0D9F1 /* resultsViewController.swift */; };
 		3F6D9C7E28FBCE5500B363A5 /* AsteriskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6D9C7D28FBCE5500B363A5 /* AsteriskViewController.swift */; };
 		3F6D9C8428FBD12A00B363A5 /* AsteriskDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6D9C8328FBD12A00B363A5 /* AsteriskDataViewController.swift */; };
 		3F753B7F29239D81009A82A8 /* ComparisonResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F753B7E29239D81009A82A8 /* ComparisonResultsViewController.swift */; };
@@ -31,6 +32,7 @@
 /* Begin PBXFileReference section */
 		3F1097592881A2FC00B34860 /* blendShapeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = blendShapeViewController.swift; sourceTree = "<group>"; };
 		3F10975B2881A30C00B34860 /* blendShapeDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = blendShapeDataViewController.swift; sourceTree = "<group>"; };
+		3F1FE70C292CE19800C0D9F1 /* resultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = resultsViewController.swift; sourceTree = "<group>"; };
 		3F6D9C7D28FBCE5500B363A5 /* AsteriskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsteriskViewController.swift; sourceTree = "<group>"; };
 		3F6D9C8328FBD12A00B363A5 /* AsteriskDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsteriskDataViewController.swift; sourceTree = "<group>"; };
 		3F753B7E29239D81009A82A8 /* ComparisonResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComparisonResultsViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				3F6D9C8128FBCE8300B363A5 /* CNN Emotion */,
 				3F6D9C8228FBCE8E00B363A5 /* blendShapes */,
 				3F6D9C7F28FBCE5B00B363A5 /* Asterisk */,
+				3F1FE70C292CE19800C0D9F1 /* resultsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F1FE70D292CE19800C0D9F1 /* resultsViewController.swift in Sources */,
 				3F8035AE2850986000D48ACD /* DataView.swift in Sources */,
 				3FCD433F2848E30100504722 /* AREmotionView.swift in Sources */,
 				3FB46A492920074F00DD2D74 /* EmotionSelectViewController.swift in Sources */,
@@ -412,7 +416,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.TeamAsterisk.Asterisk2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.TeamAsterisk.Asterisk3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -444,7 +448,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.TeamAsterisk.Asterisk2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.TeamAsterisk.Asterisk3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

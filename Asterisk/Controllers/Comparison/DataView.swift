@@ -11,6 +11,8 @@ class DataView: UIViewController {
     
     var blendEmotion: String?
     var cnnEmotion: String?
+    var countX: Int?
+    var countY: Int?
     var defaults = UserDefaults()
     
     @IBOutlet weak var cnnEmotionLabel: UILabel!
@@ -23,6 +25,9 @@ class DataView: UIViewController {
                blendEmotion = bEmotion
         }
         
+        
+        
+        
         if let cEmotion = defaults.string(forKey: "UserCNNEmotion") { // Access UserDefault
                cnnEmotion = cEmotion
         }
@@ -34,11 +39,20 @@ class DataView: UIViewController {
     
     @IBAction func algorithmXPicked(_ sender: UIButton) {
         self.defaults.set("Algorithm X", forKey: "PickedAlgorithm") // Publish to UserDefaults
+        var countX = defaults.integer(forKey: "CountX")
+        countX = ((countX) + 1)
+        defaults.set(countX, forKey: "CountX")
+        print(countX)
         performSegue(withIdentifier: "goToResults", sender: self)
     }
     
     @IBAction func algorithmYPicked(_ sender: UIButton) {
         self.defaults.set("Algorithm Y", forKey: "PickedAlgorithm") // Publish to UserDefaults
+        var countY = defaults.integer(forKey: "CountY")
+        countY = ((countY) + 1)
+        print(countY)
+        defaults.set(countY, forKey: "CountY")
+        
         performSegue(withIdentifier: "goToResults", sender: self)
     }
     

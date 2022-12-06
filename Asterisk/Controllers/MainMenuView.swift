@@ -93,6 +93,9 @@ class MainMenuView: UIViewController {
         self.performSegue(withIdentifier: "goToAsterisk", sender: self)
     }
     
+    @IBAction func resultsButton(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "goToComparisonResults", sender: self)
+    }
     
 //    override func prepare(for segue: UIStoryboardSegue, sender:Any?){
 //        if segue.identifier == "goToEmotionRec"{
